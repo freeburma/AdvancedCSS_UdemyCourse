@@ -1,0 +1,79 @@
+// Removing the top margin
+@mixin clearfix
+{
+    &::after
+    {
+        content: ""; 
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absCenter
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}// end absCenter
+
+// Media Query Manager
+/*
+    0 - 600px       : Phone
+    600 - 900px     : Tablet Porttrait
+    900 - 1200px    : Tablet Landscape
+    [1200 - 1800]   : is where our normal styles apply
+    1800px +        : Big Desktop
+
+    $breakpoint argument choices 
+    - phone 
+    - tab-port
+    - tab-land
+    -big-desktop
+
+    1em = 16px
+*/
+@mixin respond($breakpoint)
+{
+    @if ($breakpoint == phone)
+    {
+        /// Converting the px to em => 600px / 16px = 37.5em
+        @media (max-width: 37.5em) // 600px
+        {
+            // Accepting the block of code as a parameter
+            @content  
+        };
+    }
+
+    @if ($breakpoint == tab-port)
+    {
+        /// Converting the px to em => 900px / 16px = 56.25em
+        @media (max-width: 56.25em) // 900px
+        {
+            // Accepting the block of code as a parameter
+            @content  
+        };
+    }
+
+    @if ($breakpoint == tab-land)
+    {
+        /// Converting the px to em => 1200px / 16px = 75.00em
+        @media (max-width: 75.00) 
+        {
+            // Accepting the block of code as a parameter
+            @content  
+        };
+    }
+
+    /// Screen width is greater than 1800 
+    @if ($breakpoint == big-desktop) 
+    {
+        /// Converting the px to em => 1800px / 16px = 112.50em
+        @media (min-width: 112.50em) // 
+        {
+            // Accepting the block of code as a parameter
+            @content  
+        };
+    }
+
+}

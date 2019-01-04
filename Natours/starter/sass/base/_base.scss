@@ -1,0 +1,48 @@
+// Initializing the html tags 
+
+*, 
+*::after,
+*::before { /* Universal selector: Normalizing CSS and Selecting everything */
+    margin: 0; 
+    padding: 0; 
+    /* box-sizing: border-box; /* removing padding width and height*/
+    box-sizing: inherit; /* box-sizing: move to body */
+}
+
+html { /* Applying the Inheritance */
+    /* font-size: 10px; /* NOTE: Bad Practice => 1 rem = 10px ratio */
+    /*
+        Default Font Size is 16px = 100% = 10 rem 
+        10 rem / 16 px = 0.625 %
+    */
+    font-size: 62.5%; // 1 rem = 10px is our default "font size"
+
+    /// Passing the content to Mixin
+    @include respond(tab-land) // width < 1200
+    {
+        font-size: 56.25%; // wants 9px in the tablet landscape mode. So 1 rem = 9px, 9/16 = 56.25%
+    }
+
+
+    @include respond(tab-port) // width < 900
+    {
+        font-size: 50%; // wants 8px in the tablet porttrait mode. So 1 rem = 8px, 8/16 = 50%
+    }
+
+    /*
+    /// Working code for smaller devices 
+    @include respond(phone) 
+    {
+        font-size: 30%; // wants 4.8px in the tablet landscape mode. So 1 rem = 4.8px, 4.8/16 = 30%
+    }
+    */
+
+    @include respond(big-desktop)
+    {
+        font-size: 75%; // wants 12px in the tablet landscape mode. So 1 rem = 12px, 12/16 = 75%
+    }
+}
+
+body {
+    box-sizing: border-box; /* removing padding width and height*/
+}

@@ -1,0 +1,49 @@
+// Adding animations 
+@keyframes moveInLeft
+{
+    0%{
+        opacity: 0; /* Invisible */
+        transform: translateX(-10rem); /* Animate 100 px on X coordinates from left to right */
+    }
+
+    80%
+    {
+        transform: translate(1rem);
+    }
+
+    100%{
+        opacity: 1; /* Visible */
+        transform:  translate(0); /* The way it looks right now */
+    }
+}
+
+@keyframes moveInRight
+{
+    0%{
+        opacity: 0; /* Invisible */
+        transform: translateX(10rem); /* Animate 100 px on X coordinates from left to right */
+    }
+
+    80%
+    {
+        transform: translate(-1rem);
+    }
+
+    100%{
+        opacity: 1; /* Visible */
+        transform:  translate(0); /* The way it looks right now */
+    }
+}
+
+@keyframes moveInButton
+{
+    0%{
+        opacity: 0; /* Invisible */
+        transform: translateY(3rem); 
+    }
+
+    100%{
+        opacity: 1; /* Visible */
+        transform:  translate(0); /* The way it looks right now */
+    }
+}
