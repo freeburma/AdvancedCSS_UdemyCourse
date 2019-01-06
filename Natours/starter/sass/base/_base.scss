@@ -45,4 +45,10 @@ html { /* Applying the Inheritance */
 
 body {
     box-sizing: border-box; /* removing padding width and height*/
+    padding: 3rem;
+
+    @include respond(tab-port) 
+    {
+        padding: 0;
+    }
 }

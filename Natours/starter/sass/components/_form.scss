@@ -19,6 +19,11 @@
         display: blocks;
         transition: all 0.3s;
 
+        @include respond(tab-port)
+        {
+           width: 100%; 
+        }
+
         // Adding the line green color when the cursor is on focus
         &:focus 
         {
@@ -69,6 +74,12 @@
     {
         width: 49%;
         display: inline-block; // No line break and adds side by side
+
+        @include respond(tab-port)
+        {
+           width: 100%; 
+           margin-bottom: 2rem;
+        }
     }
 
     &__radio-input
