@@ -29,16 +29,25 @@
         width: 15rem;
         height: 15rem;
         float: left;
-        -webkit-shape-outside: circle(50% at 50% 50%); 
-        shape-outside: circle(50% at 50% 50%); // Creating circle with 75px with the center 
-
-        // Creating a circle
-        -webkit-clip-path: circle(50% at 50% 50%);
-        clip-path: circle(50% at 50% 50%);
-
+        
         // Adding margin. Note *** when we are floating an element, don't use "Margin" or "Padding"
         transform: translateX(-3rem) skewX(12deg);
         position: relative;
+        overflow: hidden;
+        border-radius: 50%; // For older version
+
+        /// Adding the feature query    
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0))
+        {
+           // Creating a circle
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+
+            -webkit-shape-outside: circle(50% at 50% 50%); 
+            shape-outside: circle(50% at 50% 50%); // Creating circle with 75px with the center 
+            border-radius: none;
+
+        }
 
         @include respond(phone) // < 600
         {

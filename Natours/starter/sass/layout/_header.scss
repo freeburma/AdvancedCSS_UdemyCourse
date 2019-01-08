@@ -1,21 +1,43 @@
 // Adding header -- all the web pages will have the same header
 
 .header {
-    height: 95vh; /* 95% of view port height */
+    height: 85vh; /* 95% of view port height */
     background-image: linear-gradient(
         to right bottom, 
         rgba($color-primary-light, 0.8), 
         rgba($color-primary-dark, 0.8)), 
-        url('../img/hero.jpg');
+        url('../img/hero-small.jpg');
     background-size: cover; /* Fill entire screen */
     background-position: top;
     position: relative;
     
-    /* 
+    /// Adding the feature query    
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0))
+    {
+        /* 
         0, 0 : stay at its place and wants to show the image
-    */
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);     
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);    
+        */
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);     
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);  
+        height: 95vh; /* 95% of view port height */
+    }
+
+    
+    /// Adding the background image for high resolution screens
+    /// 600px / 16 = 37.50em
+    /// 2000px / 16 = 125.00em
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.50em), // or
+           only screen and (-webkit-min-device-pixel-reation: 2) and (min-width: 37.50em), // or
+           only screen and (min-width: 125.00em)
+    {
+        background-image: linear-gradient(
+                    to right bottom, 
+                    rgba($color-secondary-light, 0.8), 
+                    rgba($color-secondary-dark, 0.8)), 
+                    url('../img/hero.jpg');
+    }
+
+   
     
     /// Adjusting the clip path at the banner
     @include respond(phone)

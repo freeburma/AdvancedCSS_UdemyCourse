@@ -40,7 +40,7 @@
     @if ($breakpoint == phone)
     {
         /// Converting the px to em => 600px / 16px = 37.5em
-        @media (max-width: 37.5em) // 600px
+        @media only screen and (max-width: 37.5em) // 600px
         {
             // Accepting the block of code as a parameter
             @content  
@@ -50,7 +50,7 @@
     @if ($breakpoint == tab-port)
     {
         /// Converting the px to em => 900px / 16px = 56.25em
-        @media (max-width: 56.25em) // 900px
+        @media only screen and (max-width: 56.25em) // 900px
         {
             // Accepting the block of code as a parameter
             @content  
@@ -60,7 +60,7 @@
     @if ($breakpoint == tab-land)
     {
         /// Converting the px to em => 1200px / 16px = 75.00em
-        @media (max-width: 75.00) 
+        @media only screen and (max-width: 75.00) 
         {
             // Accepting the block of code as a parameter
             @content  
@@ -71,7 +71,7 @@
     @if ($breakpoint == big-desktop) 
     {
         /// Converting the px to em => 1800px / 16px = 112.50em
-        @media (min-width: 112.50em) // 
+        @media only screen and (min-width: 112.50em) // 
         {
             // Accepting the block of code as a parameter
             @content  

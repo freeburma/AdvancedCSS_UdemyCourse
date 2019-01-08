@@ -11,6 +11,15 @@
     visibility: hidden;
     transition: all 0.3s;
 
+    /// Asking the browsers for supported features, if supports, apply 
+    @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
+    {
+        -webkit-backdrop-filter: blur(10px); // Not working on google chrome yet - 8-Jan-2019
+        backdrop-filter: blur(10px); // Not working on google chrome yet - 8-Jan-2019
+        background-color: rgba($color-black, 0.3);
+
+    }
+
     /// Showing the popup 
     &:target
     {
