@@ -18,7 +18,11 @@ I followed his tutorials in the "starter" folder.
     $ npm install 
 
     #### Compiling SASS
-    $ npm run compile:sass
+    $ npm run watch:sass   (for an active development)
+    $ npm run compile:sass (for a production)
+
+    #### After the first module, you may compile SASS and Run server with. See details in the packages.json file.
+    $ npm start
 
     #### Running the server with the custom port to avoid the port conflicts
     $ live-server --port=4040
