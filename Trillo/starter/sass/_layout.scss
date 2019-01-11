@@ -1,0 +1,54 @@
+.container
+{
+    max-width: 120rem;
+    margin: 8rem auto;
+    background-color: var(--color-grey-light-1);
+    box-shadow: var(--shadow-dark);
+
+    min-height: 50rem;
+}// end container
+
+.header
+{
+    font-size: 1.4rem;
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--color-grey-light-2);
+
+    display: flex;
+    justify-content: space-between; // Align on X axis with the space between
+    align-items: center; // Vertically center on X-axis
+    
+}// end header
+
+
+.content
+{
+    display: flex;
+}// end content
+
+
+.sidebar
+{
+    background-color: var(--color-grey-dark-1);
+    
+
+    /// Defining the flex 
+    flex: 0 0 18%; // flex: <flex_grow> <flex_shrink> <flex_basic(width): px or %>
+
+    // Setting the legal text to the bottom of the page
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}// end sidebar
+
+.hotel-view
+{
+    background-color: #fff;
+    background-color:orangered;
+    height: 80rem;
+
+    flex: 1; // Getting all the available space 
+    
+}// end hotel-view

@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+.container
+{
+    background-color: #ccc;
+    padding: 10px;
+    height: 1000px;
+
+    display: flex; /* Flex properties: will display the items side by side */
+    flex-direction: row; /* Will display left to right */
+    /* flex-direction: row-reverse; /* Will display at the right side */
+    /* flex-direction: column; /* Will display top to bottom */
+    /* flex-direction: column-reverse; /* Will display bottom to top */
+    
+    /* justify-content: center; */
+    justify-content: space-between; 
+    /* justify-content: space-around; */
+
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.item 
+{
+    background-color: #f1425d;
+    padding: 30px;
+    margin: 5px; 
+    color: #fff;
+    font-size: 40px;
+
+    /* flex-grow: 1; */
+}
+
+.i2 
+{
+    height: 200px;
+    /* order: 2; */
+    /* flex-grow: 3; */
+    /* flex-basis: 300px; */
+    /* flex-shrink: 0; */ /* 1 : default -> can shrink. 0 doesn't allow to shrink */
+    flex: 0 0 300px; /* flex: <flex-glow> <flex-shrink> <width: px or %>; */
+}
+
+.i3
+{
+    order: 1;
+    flex-grow: 1;
+}
+
+.i4 
+{
+    /* align-self: flex-end; */
+    order: -1; /* To send the item to the front: it has be less than 0 */
+}
