@@ -1,0 +1,77 @@
+.container
+{
+    background-color: #777;
+    width: 1000px;
+    margin: 30px auto;
+
+    display: grid;          // Using the grip layout
+    
+    // grid-template-rows: 150px 150px;
+    grid-template-rows: 100px 200px 400px 100px;
+    
+    // grid-template-columns: 150px 150px 150px;
+    // grid-template-columns: repeat(3, 150px);
+    // grid-template-columns: repeat(2, 150px) 300px; // Giving the custom px value on the third col
+    // grid-template-columns: repeat(2, 150px) 1fr; // Occupying all available width to the third col
+    grid-template-columns: repeat(3, 1fr) 200px; // Getting 3 cols with the same available width
+    // grid-template-columns: 1fr 2fr 1fr; // Getting the double space for the middle col
+    // grid-template-columns: 50% 2fr 1fr; // Getting the double space for the middle col
+
+    // grid-row-gap: 30px;     // Horizontal row gap
+    // grid-column-gap: 30px;  // Vertical col gap
+    grid-gap: 30px;            // 30 px space between both row and col 
+}
+
+.item
+{
+    padding: 20px;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: white;
+
+    &--header
+    {
+        background-color: orangered;
+        grid-column: 1 / -1;
+        
+    }
+
+    &--sm-1
+    {
+        background-color: yellowgreen;    
+        
+    }
+
+    &--sm-2
+    {
+        background-color: blueviolet;  
+    }
+
+    &--sm-3
+    {
+        background-color: palevioletred;        
+    }
+
+    &--sidebar
+    {
+        background-color: royalblue; 
+        // grid-row: 2 / 4;   
+        grid-row: 2 / span 2;   
+    }
+
+    &--main-content
+    {
+        background-color: goldenrod;  
+        // grid-column: 1 / 4;
+        grid-column: 1 / span 3;
+        grid-row: 3 / 4;
+    }
+
+    &--footer
+    {
+        background-color: crimson;
+        grid-column: 1 / -1;
+    }
+
+
+}

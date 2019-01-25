@@ -1,0 +1,66 @@
+.container
+{
+    background-color: #777;
+    width: 1000px;
+    margin: 30px auto;
+
+    display: grid;          // Using the grip layout
+    
+    grid-template-rows: [header-start] 100px [header-end box-start] 200px [box-end main-start] 400px [main-end footer-start] 100px [footer-end];
+    grid-template-columns: repeat(3, [col-start] 1fr [col-end]) 200px [grid-end]; // Getting 3 cols with the same available width
+    grid-gap: 30px;            // 30 px space between both row and col 
+}
+
+.item
+{
+    padding: 20px;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: white;
+
+    &--header
+    {
+        background-color: orangered;
+        grid-column: col-start 1 / grid-end;
+        
+    }
+
+    &--sm-1
+    {
+        background-color: yellowgreen;    
+        
+    }
+
+    &--sm-2
+    {
+        background-color: blueviolet;  
+    }
+
+    &--sm-3
+    {
+        background-color: palevioletred;        
+    }
+
+    &--sidebar
+    {
+        background-color: royalblue; 
+        // grid-row: 2 / 4;   
+        grid-column: col-end 3 / grid-end;
+        grid-row: box-start / main-end;
+    }
+
+    &--main-content
+    {
+        background-color: goldenrod;  
+        // grid-column: 1 / 4;
+        grid-column: col-start 1 / col-end 3;
+    }
+
+    &--footer
+    {
+        background-color: crimson;
+        grid-column: col-start 1 / grid-end;
+    }
+
+
+}

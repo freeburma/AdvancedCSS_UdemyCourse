@@ -1,0 +1,33 @@
+.container {
+  background-color: #777;
+  width: 1000px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-rows: 100px 200px 400px 100px;
+  grid-template-columns: repeat(3, 1fr) 200px;
+  grid-gap: 30px; }
+
+.item {
+  padding: 20px;
+  font-size: 30px;
+  font-family: sans-serif;
+  color: white; }
+  .item--header {
+    background-color: orangered;
+    grid-column: 1 / -1; }
+  .item--sm-1 {
+    background-color: yellowgreen; }
+  .item--sm-2 {
+    background-color: blueviolet; }
+  .item--sm-3 {
+    background-color: palevioletred; }
+  .item--sidebar {
+    background-color: royalblue;
+    grid-row: 2 / span 2; }
+  .item--main-content {
+    background-color: goldenrod;
+    grid-column: 1 / span 3;
+    grid-row: 3 / 4; }
+  .item--footer {
+    background-color: crimson;
+    grid-column: 1 / -1; }
